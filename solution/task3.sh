@@ -1,3 +1,4 @@
 find . -name "*.txt" -exec basename {} > names \;
-sort names
+sort names -o names
+cat names
 rm names
