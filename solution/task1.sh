@@ -1,8 +1,8 @@
 cd data
-mkdir tempd
-tar -xf archive-part1.tar -C tempd
-unzip archive-part2.zip -d tempd
-cd tempd
+export T=$(mktemp -d -p .)
+tar -xf archive-part1.tar -C $T
+unzip archive-part2.zip -d $T
+cd $T
 tar -czf ../archive-combined.tar.gz .
 cd ..
-rm -r tempd
+rm -r $T
